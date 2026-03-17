@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cactus Clicker: Sultan's Dynasty</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+    
+    <div id="game-container">
+        <div class="click-area">
+            <div id="stats-bar">
+                <div class="stat-item"><div class="stat-label">Level</div><div class="stat-val" id="lvl-val">1</div></div>
+                <div class="stat-item"><div class="stat-label">Multi</div><div class="stat-val" id="mult-val">1.0x</div></div>
+                <div class="stat-item"><div class="stat-label">NPS</div><div class="stat-val" id="nps-val">0</div></div>
+            </div>
+
+            <h1 id="needle-count">0</h1>
+            <div id="level-bar"><div id="level-fill"></div></div>
+
+            <div id="cactus-wrapper">
+                <svg id="cactus" viewBox="0 0 100 120">
+                    <path d="M25 105 L75 105 L80 120 L20 120 Z" fill="#d35400" />
+                    <rect id="cactus-body" x="40" y="25" width="20" height="85" rx="10" fill="#2ecc71" />
+                    <path id="cactus-arm-l" d="M40 55 Q20 55 20 40" fill="none" stroke="#2ecc71" stroke-width="12" stroke-linecap="round" />
+                    <path id="cactus-arm-r" d="M60 70 Q80 70 80 55" fill="none" stroke="#2ecc71" stroke-width="12" stroke-linecap="round" />
+                </svg>
+            </div>
+            
+            <p id="hint-text">Tap the cactus to begin the dynasty...</p>
+        </div>
+
+        <div class="shop-container">
+            <div class="tabs">
+                <div class="tab active" id="tab-upgrades">Bazaar</div>
+                <div class="tab" id="tab-industry">Industry</div>
+                <div class="tab" id="tab-skins">Wardrobe</div>
+            </div>
+            <div class="shop-content" id="shop-content"></div>
+        </div>
+    </div>
+
+    <!-- The game logic is loaded as a module for Firebase support -->
+    <script type="module" src="game.js"></script>
+</body>
+</html>
